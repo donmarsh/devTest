@@ -92,14 +92,12 @@
   });
 
 
-  app.controller('notesController', function($scope,$location,$http,$AuthService){
+  app.controller('notesController', function($scope,$location,$http){
 
     $scope.isEditCreateView = false;
     $scope.notes = [];
     $scope.note = {};
-    if(!AuthService.isLoggedIn()){
-        $location("/login");
-    }
+    
     _refreshNotes();
     $scope.newNoteView = function(){
         $scope.note = {};
