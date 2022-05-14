@@ -1,0 +1,26 @@
+<h4>Note</h4>
+
+<form >
+    <md-input-container>
+        <label>Name</label>
+        <input type="text" ng-model="note.noteTitle" required md-maxlength="10">
+    </md-input-container>
+
+    <md-input-container>
+        <label>Note text</label>
+        <textarea class="note-body" ng-model="note.noteText" rows="10" required md-maxlength="500">
+                </textarea>
+    </md-input-container>
+
+    <div class="action-buttons">
+        <md-button ng-click="editNote()">
+            Save
+        </md-button>
+        <md-button ng-click="clearNote()" ng-if="note.id===undefined || note.id===null">
+            Cancel
+        </md-button>
+        <md-button ng-click="deleteNote()" ng-if="note.id!==undefined && note.id!==null">
+            Delete
+        </md-button>
+    </div>
+</form>
